@@ -1,0 +1,41 @@
+{
+  "host": "localhost",
+  "port": 3031,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "b77781a100780d33b7bb5bbc9fad54113cce5e9bb11ad7f6d73aa13023dc2b8eb05c7c92461e9f8083948ddf1653735986b03f9f802fa42747b730e120dbbaed046abac0089c92733fe300c7eed21e580027e2fb9126b09388bf421da853e361ca8411df065c5f7e31fca074e1380c8a3338099a13377f86af21b3a15c41bdeca2dee3fb7c6af49c550d9f48d76d18f85665aae25644504265418a00309133e2caf78a69bf30f427b948dfd0eef9895b210964066b6c2b7f7e9f8242e53612d32f24d09baaa4bac14b66c7f81565da82b93674075321b0a74d48815b0daec9052de3e2562c86d7446de7ac96b3100aeb1f842e63d7db380951c2c9bbc175e513",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "researchers",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://purdue.edu",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/boilertalk",
+  "mailgun": {
+    "apiKey": "key-c671cf6079e0d294bfe20dff047eae28",
+    "domain": "mg.boilertalk.us"
+  },
+  "feed": {
+    "pass": ["mack", "will", "other"]
+  }
+}
